@@ -20,13 +20,6 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'SonarQube'
-    scannerMode: 'MSBuild'
-    projectKey: '0a11edcd5c541ba8cd85629dd05274dbad1c2d39'
-    projectName: 'SimpleAPI'
-- task: SonarQubeAnalyze@4
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
@@ -43,6 +36,14 @@ steps:
 # Publish build artifacts to Azure Pipelines or a Windows file share
 - task: PublishBuildArtifacts@1
 
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'SonarQube'
+    scannerMode: 'MSBuild'
+    projectKey: '0a11edcd5c541ba8cd85629dd05274dbad1c2d39'
+    projectName: 'SimpleAPI'
+    
+- task: SonarQubeAnalyze@4
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
