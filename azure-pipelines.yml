@@ -36,6 +36,13 @@ steps:
 # Publish build artifacts to Azure Pipelines or a Windows file share
 - task: PublishBuildArtifacts@1
 
+- task: SonarQubePreBuild@1
+  inputs:
+    connectedServiceName: 'SonarQube'
+    projectKey: '6f489cd97bdbd4d1ff6eaed6934e2ba0b46172f0'
+    projectName: 'SampleAPI'
+    projectVersion: '1.0'
+
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: 'SonarQube'
