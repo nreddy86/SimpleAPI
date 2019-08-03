@@ -40,7 +40,7 @@ steps:
   inputs:
     SonarQube: 'SonarQube'
     scannerMode: 'MSBuild'
-    projectKey: '0a11edcd5c541ba8cd85629dd05274dbad1c2d39'
+    projectKey: '6f489cd97bdbd4d1ff6eaed6934e2ba0b46172f0'
     projectName: 'SimpleAPI'
     
 - task: SonarQubeAnalyze@4
