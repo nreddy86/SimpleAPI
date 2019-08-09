@@ -1,1 +1,6 @@
-
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'SQ-Sample'
+    scannerMode: 'MSBuild'
+    projectKey: 'sampleapi'
+    projectName: 'sampleapi'
