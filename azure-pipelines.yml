@@ -1,6 +1,3 @@
-- task: SonarQubePrepare@4
+- task: DotNetCoreCLI@2
   inputs:
-    SonarQube: 'SQ-Sample'
-    scannerMode: 'MSBuild'
-    projectKey: 'sampleapi'
-    projectName: 'sampleapi'
+    command: 'build'
