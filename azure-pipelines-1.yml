@@ -23,7 +23,7 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: 'nreddy86_AzureCICD'
     projectName: 'nreddy86_AzureCICD'
-    
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -42,4 +42,9 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: SonarCloudAnalyze@1
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
 
