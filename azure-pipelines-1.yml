@@ -15,11 +15,15 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'SonarQube'
-    scannerMode: 'Other'
 
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'sonar-c'
+    organization: 'nreddy86'
+    scannerMode: 'MSBuild'
+    projectKey: 'nreddy86_AzureCICD'
+    projectName: 'nreddy86_AzureCICD'
+    
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -38,9 +42,4 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: SonarQubeAnalyze@4
-
-- task: SonarQubePublish@4
-  inputs:
-    pollingTimeoutSec: '300'
 
