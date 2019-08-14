@@ -21,7 +21,7 @@ namespace SampleAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            return "Narayana Nandyala";
         }
 
         // POST api/values
